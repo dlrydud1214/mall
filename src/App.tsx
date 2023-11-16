@@ -1,13 +1,13 @@
-import React from 'react';
-import css from 'styled-components'
-import Tablist from './container';
-
+import { Route, Routes } from "react-router-dom";
+import LoginTab from "./page/Login";
+import Main from "./page/Home";
 
 function App() {
   return(
-    <div className="App">
-      <Tablist></Tablist>
-    </div>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<LoginTab />} />
+      </Routes>
   )
 }
 
