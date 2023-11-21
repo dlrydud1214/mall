@@ -13,10 +13,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-// const analytics = getAnalytics(app);
-
-
-
 const app = initializeApp(firebaseConfig);
+export const authService = getAuth();
 export const auth = getAuth(app);
 export const analytics = getAnalytics(app);
