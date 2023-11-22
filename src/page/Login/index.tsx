@@ -1,8 +1,10 @@
-import Inner from "components/Inner";
+
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router";
 import styled, { css } from "styled-components";
+import { auth } from "@/firebase";
+import Inner from "@/components/Inner";
 
 type LoginForm = {
     email:string;
@@ -11,8 +13,6 @@ type LoginForm = {
 }
 
 const LoginTab = () => {
-    const auth = getAuth();
-
     const [loginForm, setLoginForm] = useState<LoginForm>({
         email:"",
         password:"",
@@ -94,7 +94,7 @@ const LoginTab = () => {
                     </InputWrapper>
                     <InputWrapper>
                         <InputTitle>이름</InputTitle>
-                        <InputBox name="name" type="text" placeholder="비밀번호를 입력하세요" onChange={handleChangeInput}/>
+                        <InputBox name="name" type="text" placeholder="이름을 입력하세요" onChange={handleChangeInput}/>
                     </InputWrapper>
 
                     <ButtonWrapper>
