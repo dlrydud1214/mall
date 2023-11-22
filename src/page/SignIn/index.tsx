@@ -1,5 +1,5 @@
-import Inner from "components/Inner"
-import { auth } from "../../firebase";
+import Inner from "@/components/Inner"
+import { auth } from "@/firebase";
 import { createUserWithEmailAndPassword} from "firebase/auth"
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router";
@@ -29,7 +29,7 @@ const SignIn = () => {
         .then((userCredential) => {
             const user = userCredential.user;
             alert('회원가입 완료');
-            navigate("/Home");
+            navigate("/Login");
         })
         .catch((error) => {
             const errorCode = error.code;
